@@ -20,7 +20,7 @@ function showPage (list, page) {
    studentList.innerHTML = '';
 
 
-   for (let i=0; list.length; i++) {
+   for (let i=0; i < list.length; i++) {
       if ( i >= startIndex && i < endIndex) {
 
 
@@ -39,11 +39,11 @@ function showPage (list, page) {
       
 
       studentList.insertAdjacentHTML('beforeend', studentItem);
-      break;
 
     };
   };
 };
+
 
 showPage(data,1);
 
@@ -56,13 +56,21 @@ This function will create and insert/append the elements needed for the paginati
 function addPagination (list) {
       let numOfPages = Math.ceil(list.length / itemsPerPage);
       const linkList = document.querySelector('.link-list');
+      linkList.innerHTML = '';
 
+      for (let i = 1; i < numOfPages; i++ ) {
+            const button = `
+            <li>
+            <button type="button">${i}</button>
+            </li>`;
+            
+            linkList.insertAdjacentHTML('beforeend', button);
+     };
 
+     activeButtonOne = document.querySelector('button:first-child');
+     activeButtonOne.className = 'active';
 
 }
-
-
+addPagination(data);
 
 // Call functions
-
-
