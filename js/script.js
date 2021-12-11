@@ -15,13 +15,14 @@ Page parameter reprsents the page number to be displayed.
 function showPage (list, page) {
    const startIndex = (page * itemsPerPage) - itemsPerPage;
    const endIndex = page * itemsPerPage;
-   const studentList = document.getElementsByClassName('student-list');
+   const studentList = document.querySelector('.student-list');
 
    studentList.innerHTML = '';
 
 
    for (let i=0; list.length; i++) {
       if ( i >= startIndex && i < endIndex) {
+
 
       const studentItem = 
       
@@ -35,8 +36,10 @@ function showPage (list, page) {
       <span class="date">Joined ${list[i].registered.date}</span>
       </div>
       </li>`;
+      
 
       studentList.insertAdjacentHTML('beforeend', studentItem);
+      break;
 
     };
   };
