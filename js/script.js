@@ -36,17 +36,23 @@ function showPage (list, page) {
       </div>
       </li>`;
 
-      studentList.insertAdjacentHTML('beforeend', studentDisplay);
+      studentList.insertAdjacentHTML('beforeend', studentItem);
 
-      };
+    };
   };
-  showPage(data,1);
 };
+
+showPage(data,1);
 
 /*
 Create the `addPagination` function
 This function will create and insert/append the elements needed for the pagination buttons
+@param {list} - represents an array of student data
 */
+
+function addPagination (list) {
+
+}
 
 
 
