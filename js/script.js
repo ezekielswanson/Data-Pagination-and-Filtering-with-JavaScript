@@ -45,8 +45,6 @@ function showPage (list, page) {
 };
 
 
-showPage(data,1);
-
 /*
 Create the `addPagination` function
 This function will create and insert/append the elements needed for the pagination buttons
@@ -63,14 +61,25 @@ function addPagination (list) {
             <li>
             <button type="button">${i}</button>
             </li>`;
-            
             linkList.insertAdjacentHTML('beforeend', button);
-     };
+            activeButtonOne = document.querySelector('button:first-child');
+            activeButtonOne.className = 'active';
+            
+      linkList.addEventListener('click', (e) => {
 
-     activeButtonOne = document.querySelector('button:first-child');
-     activeButtonOne.className = 'active';
+      if ( e.target.tagname === 'BUTTON' ) {
+            let activeBtn = document.querySelector('.active');
+            activeBtn.className = '';
+            e.target.tagName = 'active';
+            showPage(list, e.target.textContent);
+         };
+      });
+   };
+};    
 
-}
-addPagination(data);
+
 
 // Call functions
+showPage(data,1); 
+addPagination(data);
+
