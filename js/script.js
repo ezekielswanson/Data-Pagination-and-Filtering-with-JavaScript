@@ -6,12 +6,11 @@ Treehouse Techdegree: Data Pagination and Filtering
 const itemsPerPage = 9;
 
 /*
-Create the `showPage` function
-This function creates and inserts the elements needed to display a "page" of nine students
-
-List parameter represents array of student data.
-Page parameter reprsents the page number to be displayed.
+The showPage function creates and inserts the elements needed to display a "page" of nine students.
+@param{list} - represents array of student data.
+@param{page} - reprsents the page numbers to be displayed.
 */
+
 function showPage (list, page) {
    const startIndex = (page * itemsPerPage) - itemsPerPage;
    const endIndex = page * itemsPerPage;
@@ -46,8 +45,7 @@ function showPage (list, page) {
 
 
 /*
-Create the `addPagination` function
-This function will create and insert/append the elements needed for the pagination buttons
+The addPagination function creates and insert/append the elements needed for the pagination buttons
 @param {list} - represents an array of student data
 */
 
@@ -67,10 +65,10 @@ function addPagination (list) {
             
       linkList.addEventListener('click', (e) => {
 
-      if ( e.target.tagname === 'BUTTON' ) {
+      if ( e.target.tagName === 'BUTTON' ) {
             let activeBtn = document.querySelector('.active');
             activeBtn.className = '';
-            e.target.tagName = 'active';
+            e.target.classList.add('active');
             showPage(list, e.target.textContent);
          };
       });
