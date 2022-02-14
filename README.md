@@ -1,2 +1,2 @@
 # Data Pagination and Filtering with JavaScript
- Using pagination to enhance a web page's usability.
+This project HTML, CSS, and vanilla JavaScript to display info on student's in a database. 
